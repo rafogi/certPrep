@@ -4,7 +4,7 @@ interface MessageBubbleProps {
   vendorColor?: string
 }
 
-function MessageBubble({ role, content, vendorColor }: MessageBubbleProps) {
+function MessageBubble({ role, content }: MessageBubbleProps) {
   if (role === 'bot' && content === '') {
     return (
       <div className="flex justify-start">
@@ -29,10 +29,7 @@ function MessageBubble({ role, content, vendorColor }: MessageBubbleProps) {
   if (role === 'user') {
     return (
       <div className="flex justify-end">
-        <div
-          className="text-white px-3 py-2 rounded-2xl text-sm leading-relaxed max-w-[85%] whitespace-pre-wrap break-words"
-          style={{ backgroundColor: vendorColor }}
-        >
+        <div className="max-w-[85%] rounded-2xl px-3 py-2 text-sm leading-relaxed bg-primary text-primary-foreground whitespace-pre-wrap break-words">
           {content}
         </div>
       </div>
